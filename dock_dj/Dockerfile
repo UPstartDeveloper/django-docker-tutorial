@@ -16,7 +16,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # set project environment variables
 # grab these via Python's os.environ
 # these are 100% optional here
-ENV PORT=8000
+ENV PORT=8888
 ENV DEBUG=0
 
 # Install system dependencies
@@ -40,4 +40,4 @@ RUN pip3 install pipenv
 RUN pipenv install --skip-lock --system --dev
 
 EXPOSE 8888
-CMD gunicorn cfehome.wsgi:application --bind 0.0.0.0:$PORT
+CMD gunicorn dock_dj.wsgi:application --bind 0.0.0.0:$PORT
